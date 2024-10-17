@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scholarships</title>
+  <style>
+
+
+   
+
+
+
+    .navbar {
+      background-color: #333;
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      font-size: 18px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+    }
+
+    /* Hamburger menu icon styling */
+    .hamburger {
+      display: none;
+      /* Hide by default */
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Drawer (hidden initially) */
+    .drawer {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      /* Hidden off-screen initially */
+      width: 250px;
+      height: 100%;
+      background-color: #333;
+      overflow: hidden;
+      transition: left 0.3s ease;
+      /* Smooth sliding effect */
+    }
+
+    .drawer.open {
+      left: 0;
+      /* Slide in when open */
+    }
+
+    .drawer a {
+      display: block;
+      padding: 20px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+
+    /* Media query for screens <= 600px */
+    @media screen and (max-width: 600px) {
+      .navbar {
+        display: none;
+        /* Hide the regular navbar */
+      }
+
+      .hamburger {
+        display: block;
+        /* Show hamburger icon */
+        padding: 10px;
+      }
+    }
+
+
+
+
+    .header {
+      color: white;
+      background-color: gray;
+      height: 130px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      max-width: 100%;
+      text-align: center;
+
+    }
+   
+
+    @media (max-width:600px) {
+      .header {
+        height: 200px;
+
+      }
+    }
+    .background img {
+      height: 1000px;
+
+    }
+
+    @media (max-width:600px) {
+      .background img {
+
+        height: 315px;
+
+      }
+
+
+    }
+
+    .button {
+      background-color: gray;
+      color: red;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 20px 2px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+
+    .button:hover {
+      background-color: #11045c;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .about {
+      text-align: center;
+      color: #1c2bf5;
+    }
+
+    .VISION {
+      text-align: center;
+      color: #1c2bf5;
+    }
+
+    .image {
+      position: absolute;
+      top: 1600px;
+      right: 450px;
+      max-width: 100%;
+    }
+
+    .pics {
+      position: absolute;
+      right: 130px;
+      top: 2000px;
+    }
+
+    .body button {
+      background-color: rgb(7, 14, 116);
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 20px 2px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+
+
+    .here button {
+      background-color: rgb(4, 16, 71);
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 20px 2px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+
+    .our button {
+        background-color: red;
+        color: blue;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 20px 2px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+
+    /* New styles for the b class */
+    .b {
+        background-color: lightgray;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 30px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .b h3 {
+        color: darkblue;
+        text-align: center;
+    }
+
+    .b p {
+        color: #333;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .b button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .b button:hover {
+        background-color: darkgreen;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .responsive{
+      padding-top: 30px;
+      margin-top: 30px;
+
+    }
+   
+    .body{
+      top:515%;
+      position:absolute;
+      right:30%;
+      text-align: center;
+      list-style: none;
+
+    }
+
+    .nurse{
+      font-size: 30px;
+      top: 440%;
+      position: absolute;
+      color:red;
+      font-family:Arial, Helvetica, sans-serif;
+      right: 25%;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .nurse button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        border: none;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+       @media (max-width: 600px) {
+    .nurse {
+      padding: 15px;
+      right:20px;
+      top:370%;
+    }
+
+    .nurse h1 {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .nurse button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+  }
+
+  </style>
+</head>
+
+<body>
+
+  
+
+
+  <div class="header">
+    <span class="hamburger" onclick="toggleDrawer()">&#9776;</span>
+    <h1>FUTURE LEADERS<BR>YOUR GATEWAY TO EDUCATIONAL OPPORTUNITIES</h1>
+
+      <div id="drawer" class="drawer">
+        <span class="hamburger" onclick="toggleDrawer()" style="padding: 10px;">&times;</span> <!-- Close icon -->
+        <a href="index.html">About</a>
+        <a href="scholarships.html">Scholarships</a>
+        <a href="eligibility.html">Eligibility</a>
+        <a href="application.html">Application Process</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="navbar">
+      <a href="index.html">About</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="eligibility.html">Eligibility</a>
+      <a href="application.html">Application Process</a>
+      <a href="contact.html">Contact Us</a>
+  </div>
+
+
+  <div class="background">
+    <img src="images/group.jpg">
+  </div>
+
+  <div class="button">
+    <button>
+      <h1><a href="scholarship.html">get started</a></h1>
+    </button>
+
+  </div>
+  <div class="about">
+    <h1><b><a href="index.html">ABOUT US</a></b></h1>
+
+    <p>future leaders is a leading Study Abroad Consultant
+      in Nigeria with over 5 years of professional student placement and <br>
+      visa counseling service experience representing and placing students into A-Level, <br>
+      Foundation, Undergraduate, Postgraduate and PHD degree Programs at top and world ranked institutions<br>
+      around the world mainly in the United Kingdom, United States of America, Canada, Ireland, Singapore,Arab
+      Emirates.<br>
+      Please take your time to explore our website and as you require additional information <br>
+      please feel free to contact us at our office address, e-mail or phone number</p>
+
+  </div>
+  <div class="VISION">
+    <h1><b><a href="index.html">OUR VISION</a></b></h1>
+  
+
+    <div class="vision1">
+    <h4>We hope to contribute to the educational development of the nigerian youth,<br>
+      we form a force for a positive local and global change for the nigerian educational system,<br>
+      dedicated to improving Internationally tested skill set through world class trainings<br>
+      and man power development of individuals.</h4>
+    </div>
+    </div>
+
+   <div class="pic">
+    <img src="images/group2.jpg" width="420px">
+   </div>
+
+
+   <div class="our">
+    <div class="b">
+        <h3>How To Study Abroad On Scholarship: Chevening Scholarship Now Open.</h3>
+        <p>Postgraduate scholarships available...</p>
+        <h4>If you have been dreaming of studying abroad on a scholarship in 2025, the Chevening scholarship might be your golden ticket...</h4>
+        <button>Learn More</button>
+    </div>
+</div>
+
+<div class="responsive"></div>
+ <img src="images/scholl11.jpg">
+ 
+  <h2>Study Nursing Abroad</h1>
+    <button>APPLY NOW</button>
+
+  </div>
+ </div>
+
+  
+
+    </div>
+
+
+
+  
+
+
+   <div class="nurse">
+    <H1>STUDY NURSING<br>ABROAD</H1>
+    <button>Apply Now</button>
+   </div>
+
+
+
+
+    <script>
+      /* JavaScript to toggle the drawer open/close */
+      function toggleDrawer() {
+          var drawer = document.getElementById('drawer');
+          drawer.classList.toggle('open'); /* Toggle the "open" class */
+      }
+  </script>
+
+
+
+
+
+</body>
+
+</html>
